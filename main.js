@@ -47,13 +47,35 @@ Note: please write one or two lines here describing your solution.
 
 function makeComputer(type, color, weight) {
   // TODO: Your code here
+  return {
+    type, color , weight
+    }
 }
+
+var a = makeComputer('gamer', 'white', '1 kg');
+var b = makeComputer('gamer', 'pink', '2 kg');
+
+// here we did our factory function which will return an object that has the multiple proprities mentioned as parameter in our function 
+//then we assigned our factory function to 2 new variables a and b  
 
 // Write a function displayComputer that can be used to display one computer.
 
 function displayComputer(computer) {
   // TODO: Your code here
+  return computer.type + ' ' + computer.color + computer.weight ;
 }
+
+// here we are displaying the values of the object computer we have created 
+
+displayComputer(a);
+//now we ll test our functions 
+
+var computers = [];
+computers.push(a);
+computers.push(b);
+computers;
+// we created an empty array and pushed to it our 2 objects which we have created
+
 
 //=============================================================================
 /*                                  Q2                                       */
@@ -74,6 +96,10 @@ uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 
 function uppercaseAll(arrayOfStrings) {
   // TODO: your code here
+  return map(arrayOfStrings, function(element){
+  	return element.toUpperCase();
+  });
+  // we are taking the array of string and applying the uppercase on each element of our string 
 }
 
 //=============================================================================
@@ -113,8 +139,13 @@ var data = [
 
 function highestPopulation(arrayOfObjects) {
   // TODO: your code here
+  return filter(arrayOfObjects, function(element){
+  	return (element.population>500000000)
+  	//return element;
+  });
+  
 }
-
+// we iterater our array of objects and filterd it according to the value of the population and displayed the new array that suits that condition
 //=============================================================================
 /*                              Q4                                           */
 //=============================================================================
@@ -133,8 +164,12 @@ Note: please write one or two lines here describing your solution.
 
 function halveAll(numbers) {
   // your code is here
+  return map(numbers, function(element){
+  	return element/2 ;
+  });
 }
 
+// we iterated our array and returned in the map function the half of each element that existed in the array
 //=============================================================================
 /*                                  Q5                                       */
 //=============================================================================
@@ -149,6 +184,9 @@ Note: please write one or two lines here describing your solution.
 */
 function values(obj) {
   // TODO: your code here
+  return map(obj, function(value){
+  	return value;
+  });
 }
-
+// we iterated our object and returned in the map its values 
 //Good Luck :))
